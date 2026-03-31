@@ -22,7 +22,7 @@ include 'functies/read.php';
             <a href="#">Home</a>
             <a href="#">Menukaart</a>
             <a href="#">Reserveren</a>
-            <a href="#">Inloggen/Registreren</a>
+            <a href="inloggen.php">Aanmelden</a>
         </nav>
     </header>
 
