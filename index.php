@@ -1,12 +1,13 @@
 <?php
-    session_start();
-    if (isset($_SESSION['username'])) {
-    }
-    include 'connecties database/conn.php';
-    include 'functies/read.php';
+session_start();
+if (isset($_SESSION['username'])) {
+}
+include 'connecties database/conn.php';
+include 'functies/read.php';
 ?>
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
     <meta charset="UTF-8">
     <title>Straubs Stube - Bestellen</title>
@@ -21,7 +22,7 @@
             <a href="#">Home</a>
             <a href="#">Menukaart</a>
             <a href="#">Reserveren</a>
-            <a href="#">Contact</a>
+            <a href="#">Inloggen/Registreren</a>
         </nav>
     </header>
 
@@ -41,7 +42,9 @@
                         <p><?= $row['ingredienten'] ?></p>
                         <div class="price-row">
                             <span>€<?= number_format($row['prijs'], 2, ',', '.') ?></span>
-                            <label for="item1" class="order-btn">+</label>
+                            <label class="order-btn"
+                                data-naam="<?= htmlspecialchars($row['naam']) ?>"
+                                data-prijs="<?= $row['prijs'] ?>">+</label>
                         </div>
                     </div>
                 <?php } ?>
@@ -55,7 +58,7 @@
             <div class="cart-items">
                 <p class="empty">Uw winkelwagen is leeg</p>
             </div>
-
+            <div class="totaal"></div>
             <div class="cart-footer">
                 <button class="checkout">Bestellen</button>
             </div>
@@ -66,7 +69,7 @@
     <footer>
         <p>&copy; 2026 Straubs Stube. Alle rechten voorbehouden.</p>
     </footer>
-
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>

@@ -188,6 +188,19 @@ input[type="checkbox"] {
     background-color: #d4bd63;
 }
 
+.verwijder-btn {
+    background: none;
+    border: none;
+    color: var(--light-gray);
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.verwijder-btn:hover {
+    color: red;
+}
+
 footer {
     text-align: center;
     padding: 30px;
