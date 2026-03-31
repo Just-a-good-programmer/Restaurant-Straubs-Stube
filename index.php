@@ -3,8 +3,7 @@
     if (isset($_SESSION['username'])) {
     }
     include 'connecties database/conn.php';
-    header("Location: index.php");
-include 'functies/read.php';
+    include 'functies/read.php';
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -37,6 +36,7 @@ include 'functies/read.php';
             <div class="menu-grid">
                 <?php foreach ($result as $row) { ?>
                     <div class="card">
+                        <img src="<?= $row['foto'] ?>" alt="<?= $row['naam'] ?>">
                         <h3><?= $row['naam'] ?></h3>
                         <p><?= $row['ingredienten'] ?></p>
                         <div class="price-row">
