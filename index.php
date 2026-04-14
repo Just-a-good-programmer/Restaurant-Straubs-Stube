@@ -13,13 +13,13 @@ include 'functies/read.php';
     <title>Straubs Stube - Bestellen</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-
+<!-- De html en css is met ai gegenereerd, en door mij aangepast waar nodig. -->
 <body>
 
     <header>
         <div class="logo">Straubs <span>Stube</span></div>
         <nav>
-            <a href="#">Home</a>
+            <a href="index.php">Home</a>
             <a href="#">Menukaart</a>
             <a href="#">Reserveren</a>
             <a href="inloggen.php">Aanmelden</a>
