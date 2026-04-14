@@ -201,6 +201,108 @@ input[type="checkbox"] {
     color: red;
 }
 
+.add-product input,
+.add-product textarea,
+.add-product select{
+margin:8px 0 15px;
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+.add-product button{
+background:var(--gold);
+border:none;
+padding:12px;
+font-weight:bold;
+cursor:pointer;
+}
+
+/* Tabel styling */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--dark-gray);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Header */
+thead {
+    background-color: var(--gold);
+    color: var(--dark-blue);
+}
+
+thead th {
+    padding: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* Rijen */
+tbody tr {
+    border-bottom: 1px solid var(--light-gray);
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background-color: #1a1f27;
+}
+
+/* Kolommen */
+td {
+    padding: 15px;
+}
+
+/* Verticale lijnen */
+td, th {
+    border-right: 1px solid var(--light-gray);
+}
+
+td:last-child, th:last-child {
+    border-right: none;
+}
+
+/* Specifieke kolom uitlijning */
+td:nth-child(3) {
+    text-align: right; /* prijs rechts */
+    font-weight: bold;
+}
+
+td:nth-child(4) {
+    text-align: center; /* knoppen centreren */
+}
+
+/* Knoppen */
+.edit {
+    background-color: var(--gold);
+    color: var(--dark-blue);
+    border: none;
+    padding: 6px 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit:hover {
+    background-color: #d4bd63;
+}
+
+.delete:hover {
+    background-color: #ff2e2e;
+}
+
 footer {
     text-align: center;
     padding: 30px;
