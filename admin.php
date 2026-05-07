@@ -1,8 +1,6 @@
 <?php
 include 'functies/read.php';
-include 'functies/create.php';
-include 'functies/update.php';
-include 'functies/delete.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="nl">
@@ -24,30 +22,9 @@ include 'functies/delete.php';
     </nav>
 </header>
 
-
-<div class="admin-container">
-
-<!-- Sidebar -->
-
-<aside class="sidebar">
-
-<h3>Dashboard</h3>
-
-<nav>
-<a href="#">Overzicht</a>
-<a href="#">Producten</a>
-<a href="#">Bestellingen</a>
-<a href="#">Categorieën</a>
-<a href="#">Gebruikers</a>
-<a href="#">Instellingen</a>
-</nav>
-
-</aside>
-
-
 <!-- Main content -->
 
-<main class="admin-main">
+<main id="admin-main">
 
 <h1>Admin Dashboard</h1>
 
@@ -63,6 +40,7 @@ include 'functies/delete.php';
 <table>
     <thead>
         <tr>
+            <th>itemnr</th>
             <th>Naam</th>
             <th>Ingediënten</th>
             <th>Prijs</th>
@@ -74,13 +52,16 @@ include 'functies/delete.php';
 <?php foreach ($result as $row): ?>
 
 <tr>
-<td><?= htmlspecialchars($row['naam']) ?></td>
-<td><?= htmlspecialchars($row['ingredienten']) ?></td>
-<td>€<?= number_format($row['prijs'], 2, ',', '.') ?></td>
-<td>
-    <button class="edit">Bewerk</button>
-    <button class="delete">Verwijder</button>
-</td>
+<td><? $row['itemnr'] ?></td>
+<td><? $row['naam'] ?></td>
+<td><? $row['ingredienten'] ?></td>
+<td>€<? number_format($row['prijs'], 2, ',', '.') ?></td>
+ <td>
+    <form action="functies/delete.php" method="POST">
+    <input type="hidden" name="itemnr" value="<? $row['itemnr'] ?>">
+    <button type="submit" class="delete">Verwijder</button>
+</form>
+</td> 
 </tr>
 
 <?php endforeach; ?>
@@ -98,7 +79,7 @@ include 'functies/delete.php';
 
 <h2>Nieuw product toevoegen</h2>
 
-<form>
+<form action="functies/create.php" method="POST">
 
 <label>Naam</label>
 <input type="text" name="naam" placeholder="Product naam">
@@ -107,7 +88,7 @@ include 'functies/delete.php';
 <textarea name="ingredienten" placeholder="Ingrediënten"></textarea>
 
 <label>Prijs</label>
-<input type="text" name="prijs" placeholder="€0.00">
+<input type="text" name="prijs" placeholder="0.00">
 
 
 <button type="submit">Product toevoegen</button>

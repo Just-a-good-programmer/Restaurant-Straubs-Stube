@@ -204,18 +204,34 @@ input[type="checkbox"] {
 .add-product input,
 .add-product textarea,
 .add-product select{
+display: flex;
+flex-direction: column;
 margin:8px 0 15px;
 padding:10px;
 border:none;
 border-radius:5px;
 }
 
+textarea {
+resize: none;
+min-height: 100px;
+max-height: 100px;
+min-width: 200px;
+max-width: 200px;
+}
+
 .add-product button{
 background:var(--gold);
 border:none;
 padding:12px;
+border-radius:5px;
 font-weight:bold;
 cursor:pointer;
+}
+
+#admin-main {
+    display: flex;
+    flex-direction: column;;
 }
 
 /* Tabel styling */
@@ -294,6 +310,8 @@ td:nth-child(4) {
     border-radius: 5px;
     cursor: pointer;
 }
+
+
 
 .edit:hover {
     background-color: #d4bd63;
